@@ -38,18 +38,43 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
-**Procedure**
+<img width="1536" height="1024" alt="ChatGPT Image Nov 22, 2026, 04_07_24 PM" src="https://github.com/user-attachments/assets/1799a240-3cb9-4763-ada8-e0cfc34b7801" />
 
-Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+~~~
+module FullAddSub (
+    input  a, b, cin,
+    output sum, carry_out,
+    output difference, borrow_out
+);
+
+assign sum        = a ^ b ^ cin;
+assign carry_out  = (a & b) | (a & cin) | (b & cin);
+
+assign difference = a ^ b ^ cin;
+assign borrow_out = (~a & b) | (~(a ^ b) & cin);
+
+endmodule
+~~~
+
+ Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+
+Developed by: N.Surya
+
+Register Number: 212225040442
+
 
 **RTL Schematic**
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a3033150-1609-461d-96bf-2336dd798c2a" />
+
+
 **Output Timing Waveform**
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f24aa996-8187-450e-abf9-c1d0fe5f1de2" />
+
 
 **Result:**
 
